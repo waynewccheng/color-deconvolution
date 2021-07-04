@@ -5,8 +5,8 @@ function sourcenorm = Demo_colornorm(source, target);
 % close all 
 % clc
 %% Read source and target Whole slide images (WSIs) 
-%source=imread('images\source.tiff');
-%target=imread('images\target.tiff');
+source=imread('images\source.tiff');
+target=imread('images\target.tiff');
 
 %% Fast separation of WSI
 nstains=2;

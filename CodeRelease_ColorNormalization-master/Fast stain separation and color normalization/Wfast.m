@@ -31,9 +31,11 @@ patch = uint8(zeros(patchsize+1,patchsize+1,3,length(validgrid_x)));
 % hold on; plot(grid_x,grid_y,'b--',grid_x',grid_y','b--');
 % hold on; plot(validgrid_x,validgrid_y,'r*');
 
-parfor i=1:length(validgrid_x)
+%parfor i=1:length(validgrid_x)
+patchsize_half = round(patchsize/2);
+for i=1:length(validgrid_x)
 
-    patch=img(validgrid_y(i)-patchsize/2:validgrid_y(i)+patchsize/2,validgrid_x(i)-patchsize/2:validgrid_x(i)+patchsize/2,:);
+    patch=img(validgrid_y(i)-patchsize_half:validgrid_y(i)+patchsize_half,validgrid_x(i)-patchsize_half:validgrid_x(i)+patchsize_half,:);
     %samplings(validgrid_y(i)-patchsize/2:validgrid_y(i)+patchsize/2,validgrid_x(i)-patchsize/2:validgrid_x(i)+patchsize/2)=1.0;
     [WS(:,:,i)]=getstainMat(patch, param);
 

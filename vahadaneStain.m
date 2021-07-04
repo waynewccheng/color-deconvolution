@@ -13,7 +13,8 @@ function vahadane_stains = vahadaneStain(str)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 clf;
-im_dir = 'C:\Users\tam128\Documents\MATLAB\Norm\tissue_images_tp10-867-1\';
+%im_dir = 'C:\Users\tam128\Documents\MATLAB\Norm\tissue_images_tp10-867-1\';
+im_dir = 'C:\Users\wayne\Documents\GitHub\color-deconvolution\datain\';
 imlist = dir(fullfile(im_dir,'*.tif'));
 imlist = {imlist.name}';
 vahadane_stains = cell(length(imlist), 1);
@@ -80,7 +81,7 @@ es = scatter3(avg_eos(1, 1),avg_eos(1, 2), avg_eos(1, 3), 220, avg_eos(1, :), 'p
 set(es, 'MarkerEdgeColor', 'w', 'LineWidth', 1);
 
 filename = strcat('C:\Users\tam128\Documents\MATLAB\Norm\tissue_images_tp10-867-1\Stain vectors-tissue_images_tp10-867-1.tif');
-print(stain_graph, '-dtiff', filename);
+%print(stain_graph, '-dtiff', filename);
 save('stain_vectors_tissue_images_tp10-867-1.mat', 'vahadane_stains', 'avg_hem', 'avg_eos');
 
 end

@@ -6,15 +6,18 @@ clc
 % Parameters
 nstains=2;
 lambda=0.05;
-addpath(genpath('D:\Dropbox\TUM 1\Report or writing\My Papers\TMI2015\CodeRelease'))
+%addpath(genpath('D:\Dropbox\TUM 1\Report or writing\My Papers\TMI2015\CodeRelease'))
 
-target=imread('G:\Color normalization for JPI\target\PrognosisTMABlock1_A_3_1_H&E.tif');
+target=imread('datain\88.png');
 [Wit, Hit,Hivt,stainst]=Faststainsep(target,nstains,lambda);
 
 %% Define source and target images (Add target and source images to the folder "images")
-folder='G:\Color normalization for JPI\source';
-list=dir([folder,'\*.tif']);
-writefolder='G:\Color normalization for JPI\source_norm\GridSampling_0.05';
+%folder='G:\Color normalization for JPI\source';
+%list=dir([folder,'\*.tif']);
+%writefolder='G:\Color normalization for JPI\source_norm\GridSampling_0.05';
+folder='datain';
+list=dir([folder,'\*.png']);
+writefolder='dataout';
 
 for k=1:length(list)
 
